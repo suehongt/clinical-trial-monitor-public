@@ -1,0 +1,144 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-10-02",
+  "title": {
+    "zh": "版本更新记录",
+    "en": "Release Notes"
+  },
+  "summary": {
+    "zh": "记录面向使用者的重要功能、优化和修复。最新版本排在最前。",
+    "en": "User-facing features, improvements, and fixes, with the newest release first."
+  },
+  "releases": [
+    {
+      "version": "1.10.0",
+      "date": "2026-10-02",
+      "status": "current",
+      "title": { "zh": "研究工作台全新界面与发布候选审计", "en": "Redesigned research workspace and release-candidate audit" },
+      "changes": [
+        {
+          "type": "feature",
+          "text": {
+            "zh": "全部页面采用统一的研究工作台设计：更清晰的信息层级、一致的操作控件，并保持原有的检索、监测与项目能力。",
+            "en": "All pages now share one research-workspace design: clearer hierarchy and consistent controls, with search, monitoring, and project capabilities unchanged."
+          }
+        },
+        {
+          "type": "improvement",
+          "text": {
+            "zh": "页面按路由拆分加载，首次进入更快；深浅主题与中英文界面全面适配。",
+            "en": "Routes load on demand for a faster first open; light/dark themes and the bilingual interface are fully supported."
+          }
+        },
+        {
+          "type": "fix",
+          "text": {
+            "zh": "修复浅色与深色主题下的文字对比度、320px 小屏溢出及移动端表格的键盘可达性问题。",
+            "en": "Fixed text contrast in both themes, small-screen (320px) overflow, and keyboard access to scrollable tables on mobile."
+          }
+        },
+        {
+          "type": "improvement",
+          "text": {
+            "zh": "发布候选审计通过：0 严重无障碍违规、三引擎浏览器矩阵、备份恢复演练与打印/导出验证。",
+            "en": "Release-candidate audit passed: zero serious accessibility violations, a three-engine browser matrix, backup/restore drills, and print/export verification."
+          }
+        }
+      ]
+    },
+    {
+      "version": "1.9.0",
+      "date": "2026-09-24",
+      "status": "previous",
+      "title": { "zh": "部署与自动监测增强", "en": "Deployment and scheduled monitoring" },
+      "changes": [
+        {
+          "type": "feature",
+          "text": {
+            "zh": "新增可选的访问认证与 Linux 部署工具包，便于在服务器环境安全运行。",
+            "en": "Added optional access authentication and a Linux deployment kit for safer server operation."
+          }
+        },
+        {
+          "type": "feature",
+          "text": {
+            "zh": "监测主题现可按计划自动运行，并在详情页展示下一次执行时间及运行历史。",
+            "en": "Monitors can now run on schedule and show their next execution time and run history."
+          }
+        },
+        {
+          "type": "fix",
+          "text": {
+            "zh": "修复中文注册源实时检查的浏览器线程故障与错误熔断问题。",
+            "en": "Fixed browser-thread failures and incorrect circuit breaking during live checks of Chinese registries."
+          }
+        },
+        {
+          "type": "improvement",
+          "text": {
+            "zh": "补充 Windows 安装说明，并统一监测时间的本地时区显示。",
+            "en": "Added Windows installation guidance and consistent local-time display for monitor timestamps."
+          }
+        }
+      ]
+    },
+    {
+      "version": "1.8.0",
+      "date": "2026-09-23",
+      "status": "previous",
+      "title": { "zh": "搜索与计划任务优化", "en": "Search and scheduling improvements" },
+      "changes": [
+        {
+          "type": "feature",
+          "text": {
+            "zh": "新增中文复合词分词回退，提高疾病与检测概念组合检索的召回率。",
+            "en": "Added Chinese compound-term segmentation fallback to improve recall for combined disease and assay concepts."
+          }
+        },
+        {
+          "type": "feature",
+          "text": {
+            "zh": "新增监测频率配置和清晰的“已保存搜索”创建入口。",
+            "en": "Added configurable monitor frequency and a clearer creation path for Saved Searches."
+          }
+        },
+        {
+          "type": "improvement",
+          "text": {
+            "zh": "搜索过程增加耗时与分来源进度反馈，减少长查询期间的不确定感。",
+            "en": "Added elapsed-time and per-source progress feedback for long-running searches."
+          }
+        }
+      ]
+    },
+    {
+      "version": "1.7.0",
+      "date": "2026-09-23",
+      "status": "previous",
+      "title": { "zh": "研究工作区与生产就绪", "en": "Research workspace and production readiness" },
+      "changes": [
+        {
+          "type": "feature",
+          "text": {
+            "zh": "新增研究项目、保存的搜索、笔记与证据、范围化情报仪表盘及自然语言检索。",
+            "en": "Added research projects, saved searches, notes and evidence, scoped intelligence dashboards, and natural-language search."
+          }
+        },
+        {
+          "type": "feature",
+          "text": {
+            "zh": "新增数据源同步历史、来源新鲜度、备份恢复和生产健康检查。",
+            "en": "Added source synchronization history, freshness indicators, backup and recovery, and production health checks."
+          }
+        },
+        {
+          "type": "improvement",
+          "text": {
+            "zh": "增强 ChiCTR、CTR、WHO ICTRP 和 ClinicalTrials.gov 的发现、补全与一致性处理。",
+            "en": "Improved discovery, enrichment, and consistency handling across ChiCTR, CTR, WHO ICTRP, and ClinicalTrials.gov."
+          }
+        }
+      ]
+    }
+  ]
+}

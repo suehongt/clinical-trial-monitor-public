@@ -1,0 +1,10 @@
+{
+  "edition": "public",
+  "app_version": "1.10.0",
+  "schema_version": 20,
+  "commit": "9a0df310bab1dac8605fd62205d35bd40455e8c1",
+  "generated_at": "2026-10-03T16:14:00+08:00",
+  "file_count": 273,
+  "sanitized": true,
+  "note": "Personal-use export. Development process records and private operational notes are excluded; a private-string scan (server addresses, credentials, workspace context) passed over every exported file."
+}

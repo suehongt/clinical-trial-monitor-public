@@ -1,0 +1,72 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ["3.9", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt pyflakes
+
+      # browser_base circuit tests launch a real (headless) chromium with
+      # fake pages — the binary must exist or the suite fails. Same gap
+      # broke the v1.4.0 release run.
+      - name: Install Playwright chromium
+        run: playwright install --with-deps chromium
+
+      # web/dist is gitignored, so the browser E2E fixture rebuilds the SPA
+      # via `npm run build`; that needs the Node toolchain in this job.
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install web dependencies
+        run: cd web && npm ci
+
+      - name: Lint (pyflakes, zero-warning policy)
+        run: python -m pyflakes $(git ls-files '*.py')
+
+      - name: Tests
+        run: python -m pytest -q
+
+  # The web viewer never built on push/PR — its tsc + guard contract tests
+  # only ran in the manual, Pages-blocked web.yml. A guard-contract break
+  # (e.g. the exporter/API JSON shapes drifting) must turn CI red here.
+  web:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Install
+        run: cd web && npm ci
+
+      - name: Type-check & contract tests
+        run: cd web && npm run test
+
+      - name: Build
+        run: cd web && npm run build

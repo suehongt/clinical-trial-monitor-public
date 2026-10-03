@@ -1,0 +1,14 @@
+import { strict as assert } from "node:assert";
+import { draftToRule, filterMonitors, freshnessSummary, monitorScheduleFilter, monitorStatusFilter, positivePage, projectTab, projectView, retryEligible, sourceTrialKey, stableProjectSort, trialView } from "./phase4State";
+assert.deepEqual(draftToRule({ query: " heart, lung, heart,  ", registries: ["NCT", "ChiCTR"] }), { query: ["heart", "lung"], registries: ["NCT", "ChiCTR"] });
+assert.equal(monitorStatusFilter("bad"), "all"); assert.equal(monitorScheduleFilter("bad"), "all");
+const monitors = [{ id: 1, name: "Heart", enabled: 1, schedule_enabled: 1, current_trials: 0, new_count: 0, changed_count: 0, left_count: 0 }, { id: 2, name: "Lung", enabled: 0, schedule_enabled: 0, current_trials: 0, new_count: 0, changed_count: 0, left_count: 0 }];
+assert.deepEqual(filterMonitors(monitors, "heart", "enabled", "scheduled").map((x) => x.id), [1]);
+assert.equal(projectView("bad"), "active"); assert.equal(projectView(null, "true"), "archived");
+assert.equal(projectTab("searches"), "overview"); assert.equal(projectTab("updates"), "activity"); assert.equal(projectTab("briefing"), "intelligence");
+assert.equal(trialView("bad"), "curated"); assert.equal(positivePage("-3"), 1); assert.equal(sourceTrialKey("NCT", "1"), "NCT:1");
+assert.equal(retryEligible("failed"), true); assert.equal(retryEligible("succeeded"), false);
+assert.deepEqual(freshnessSummary([{ enabled: true, freshness: "fresh", latest_run_status: "succeeded" }, { enabled: true, freshness: "stale", latest_run_status: "failed" }]), { enabled: 2, fresh: 1, attention: 1, failed: 1 });
+const projects = [{ id: 1, pinned: 0, archived_at: null }, { id: 2, pinned: 1, archived_at: null }] as never[];
+assert.deepEqual(stableProjectSort(projects).map((p) => p.id), [2, 1]);
+console.log("phase4State tests: all passed");

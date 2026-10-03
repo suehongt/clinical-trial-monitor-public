@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "updatedAt": "2026-09-28",
+  "title": {
+    "zh": "使用说明",
+    "en": "User Guide"
+  },
+  "summary": {
+    "zh": "从检索、整理到持续监测，快速了解临床试验监测平台的主要工作流。",
+    "en": "Learn the main workflows of the clinical trial monitoring workspace, from discovery and curation to ongoing monitoring."
+  },
+  "sections": [
+    {
+      "id": "getting-started",
+      "title": { "zh": "快速开始", "en": "Getting started" },
+      "description": {
+        "zh": "建议按照“检索试验 → 保存搜索或加入项目 → 创建监测主题 → 查看动态”的顺序开始。",
+        "en": "A useful first workflow is: find trials, save the search or add trials to a project, create a monitor, then review updates."
+      },
+      "items": [
+        {
+          "title": { "zh": "检索试验", "en": "Find trials" },
+          "body": {
+            "zh": "在顶部搜索框输入疾病、干预措施、申办方或注册号。试验页可进一步按来源、状态、分期等条件筛选；需要最新结果时可开启“实时查原站”。",
+            "en": "Use the top search box for a disease, intervention, sponsor, or registry ID. Refine results by source, status, phase, and other filters; enable live source search when you need the latest registry results."
+          },
+          "link": { "path": "/trials", "label": { "zh": "前往试验检索", "en": "Open trial search" } }
+        },
+        {
+          "title": { "zh": "整理研究资料", "en": "Organize research" },
+          "body": {
+            "zh": "项目用于归集试验、保存的搜索、监测主题、笔记和证据。项目本身不会自动执行检索或监测。",
+            "en": "Projects collect trials, saved searches, monitors, notes, and evidence. A project does not run searches or monitoring by itself."
+          },
+          "link": { "path": "/projects", "label": { "zh": "查看研究项目", "en": "View research projects" } }
+        }
+      ]
+    },
+    {
+      "id": "monitoring",
+      "title": { "zh": "持续监测", "en": "Ongoing monitoring" },
+      "description": {
+        "zh": "把需要重复追踪的检索条件配置为监测主题，系统会记录试验进入、离开及字段变化。",
+        "en": "Turn repeatable criteria into monitors that record trials entering or leaving the scope and changes to trial fields."
+      },
+      "items": [
+        {
+          "title": { "zh": "创建监测主题", "en": "Create a monitor" },
+          "body": {
+            "zh": "填写名称和匹配条件，选择手动、每小时、每日或每周运行。可随时暂停监测，历史运行记录仍会保留。",
+            "en": "Set a name and matching criteria, then choose manual, hourly, daily, or weekly execution. Pausing a monitor keeps its run history intact."
+          },
+          "link": { "path": "/monitors", "label": { "zh": "管理监测主题", "en": "Manage monitors" } }
+        },
+        {
+          "title": { "zh": "查看动态与通知", "en": "Review updates and notifications" },
+          "body": {
+            "zh": "动态页集中展示字段变化、通知和每日摘要；可按范围、时间窗口及严重程度筛选。",
+            "en": "The Updates page combines field changes, notifications, and daily digests, with scope, time-window, and severity filters."
+          },
+          "link": { "path": "/updates", "label": { "zh": "查看动态", "en": "View updates" } }
+        }
+      ]
+    },
+    {
+      "id": "data-and-interpretation",
+      "title": { "zh": "数据与使用边界", "en": "Data and interpretation" },
+      "description": {
+        "zh": "页面内容来自临床试验注册库及本地同步结果，使用时应同时关注数据时效性与来源差异。",
+        "en": "Content comes from trial registries and locally synchronized records. Always consider freshness and cross-registry differences."
+      },
+      "items": [
+        {
+          "title": { "zh": "确认数据截止时间", "en": "Check data freshness" },
+          "body": {
+            "zh": "数据来源页会显示各注册库最近同步时间和健康状态。原站更新与本地入库之间可能存在延迟。",
+            "en": "The Data Sources page shows the latest synchronization time and health of each registry. Registry changes may take time to reach the local index."
+          },
+          "link": { "path": "/data-sources", "label": { "zh": "查看数据来源", "en": "View data sources" } }
+        },
+        {
+          "title": { "zh": "研究用途声明", "en": "Research-use notice" },
+          "body": {
+            "zh": "本平台用于信息检索、整理和变化监测，不替代注册库原始记录、医学判断或监管决策。关键结论请回到原始来源核验。",
+            "en": "This workspace supports information discovery, organization, and change monitoring. It does not replace registry records, medical judgment, or regulatory decisions; verify critical conclusions at the original source."
+          }
+        }
+      ]
+    }
+  ]
+}

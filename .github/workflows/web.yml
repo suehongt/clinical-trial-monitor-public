@@ -1,0 +1,62 @@
+name: Deploy Web Viewer
+
+# NOTE: the Pages deploy steps require GitHub Pages, which is unavailable
+# while the repository is private (free plan). Trigger manually after
+# switching to a paid plan or making the repo public.
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      # Data JSONs are not tracked in git; the tarball is published to the
+      # "web-data" release by scripts/publish_web_data.py. Its archive paths
+      # are rooted at web/public/data/, so extracting at the checkout root
+      # restores the files where the Vite build expects them.
+      - name: Download web viewer data
+        run: |
+          gh release download web-data --repo ${{ github.repository }} --pattern 'web-data.tar.gz' --output web-data.tar.gz
+          tar -xzf web-data.tar.gz
+        env:
+          GH_TOKEN: ${{ github.token }}
+        continue-on-error: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+          cache-dependency-path: web/package-lock.json
+
+      - name: Build
+        # CT_WEB_BASE=./ keeps asset URLs relative for the Pages subpath
+        # deploy (the self-hosted default in vite.config.ts is "/")
+        run: cd web && CT_WEB_BASE=./ npm ci && CT_WEB_BASE=./ npm run build
+
+      # Needs node_modules (esbuild) and the released data files extracted
+      # above, so it runs after "Build" (which performs npm ci).
+      - name: Type-check & contract tests
+        run: cd web && npm run test
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: web/dist
+
+      - id: deployment
+        uses: actions/deploy-pages@v4

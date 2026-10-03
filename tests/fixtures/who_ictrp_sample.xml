@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<Trials>
+  <!-- Record 1: NCT trial from ClinicalTrials.gov - should link to existing NCT master -->
+  <Trial>
+    <reg_name>ClinicalTrials.gov</reg_name>
+    <trial_id>NCT04760888</trial_id>
+    <date_registration>15/02/2021</date_registration>
+    <public_title>A Study of Vaccine Against COVID-19 in Healthy Adults</public_title>
+    <scientific_title>Phase 3 Randomized, Placebo-Controlled Study of the Safety and Efficacy of mRNA-1273</scientific_title>
+    <primary_sponsor>ModernaTX, Inc.</primary_sponsor>
+    <recruitment_status>Completed</recruitment_status>
+    <study_type>Interventional</study_type>
+    <phase>Phase 3</phase>
+    <target_size>30000</target_size>
+    <hc_freetext>COVID-19</hc_freetext>
+    <i_freetext>mRNA-1273 vaccine</i_freetext>
+    <country2>United States</country2>
+    <primary_outcome>Number of Participants With First Occurrence of COVID-19</primary_outcome>
+    <secondary_outcome>Number of Participants With Severe COVID-19</secondary_outcome>
+    <inclusion_criteria>Healthy adults aged 18+</inclusion_criteria>
+    <exclusion_criteria>Prior COVID-19 infection</exclusion_criteria>
+    <ethics_status>Approved</ethics_status>
+  </Trial>
+
+  <!-- Record 2: ChiCTR trial - should link to existing ChiCTR master -->
+  <Trial>
+    <reg_name>ChiCTR</reg_name>
+    <trial_id>ChiCTR2600128415</trial_id>
+    <date_registration>10/01/2026</date_registration>
+    <public_title>Lung Cancer Screening with Low-Dose CT</public_title>
+    <scientific_title>Early Detection of Lung Cancer in High-Risk Population: A Prospective Cohort Study</scientific_title>
+    <primary_sponsor>Peking University Cancer Hospital</primary_sponsor>
+    <recruitment_status>Recruiting</recruitment_status>
+    <study_type>Observational</study_type>
+    <target_size>5000</target_size>
+    <hc_freetext>Lung Cancer</hc_freetext>
+    <i_freetext>Low-dose CT screening</i_freetext>
+    <country2>China</country2>
+    <inclusion_criteria>High-risk individuals aged 50-75</inclusion_criteria>
+    <exclusion_criteria>Prior cancer diagnosis</exclusion_criteria>
+  </Trial>
+
+  <!-- Record 3: CTR trial with NCT cross-reference -->
+  <Trial>
+    <reg_name>ChinaDrugTrials</reg_name>
+    <trial_id>CTR20250001</trial_id>
+    <date_registration>05/03/2025</date_registration>
+    <public_title>A Study of SY-12321 in ALK-Positive NSCLC Patients</public_title>
+    <scientific_title>Phase 1/2 Study of SY-12321, a Novel ALK Inhibitor, in ALK-Positive Advanced NSCLC</scientific_title>
+    <primary_sponsor>Shouyao Holdings</primary_sponsor>
+    <recruitment_status>Recruiting</recruitment_status>
+    <study_type>Interventional</study_type>
+    <phase>Phase 1/Phase 2</phase>
+    <target_size>60</target_size>
+    <hc_freetext>Non-small Cell Lung Cancer</hc_freetext>
+    <i_freetext>SY-12321</i_freetext>
+    <country2>China</country2>
+    <secondary_id>NCT04760888</secondary_id>
+    <primary_outcome>Incidence of TEAE</primary_outcome>
+  </Trial>
+
+  <!-- Record 4: ANZCTR trial (no matching master) - should create new master -->
+  <Trial>
+    <reg_name>ANZCTR</reg_name>
+    <trial_id>ACTRN12625000000000</trial_id>
+    <date_registration>20/06/2025</date_registration>
+    <public_title>Melatonin for Sleep Disorders in Children with Autism</public_title>
+    <scientific_title>A Randomised Controlled Trial of Melatonin for Sleep Disorders in Children with Autism Spectrum Disorder</scientific_title>
+    <primary_sponsor>Sydney Children's Hospital</primary_sponsor>
+    <recruitment_status>Not yet recruiting</recruitment_status>
+    <study_type>Interventional</study_type>
+    <phase>Phase 2</phase>
+    <target_size>120</target_size>
+    <hc_freetext>Autism Spectrum Disorder</hc_freetext>
+    <i_freetext>Melatonin</i_freetext>
+    <country2>Australia</country2>
+    <primary_outcome>Sleep latency measured by actigraphy</primary_outcome>
+    <secondary_outcome>Total sleep time</secondary_outcome>
+    <inclusion_criteria>Children aged 4-12 with ASD</inclusion_criteria>
+    <exclusion_criteria>Known sleep apnea</exclusion_criteria>
+  </Trial>
+
+  <!-- Record 5: DRKS trial with UTN -->
+  <Trial>
+    <reg_name>DRKS</reg_name>
+    <trial_id>DRKS00030000</trial_id>
+    <date_registration>01/04/2024</date_registration>
+    <public_title>Digital Health Intervention for Diabetes Prevention</public_title>
+    <scientific_title>Efficacy of a Smartphone-Based Intervention for Type 2 Diabetes Prevention: A Randomized Trial</scientific_title>
+    <primary_sponsor>Charité Berlin</primary_sponsor>
+    <recruitment_status>Active, not recruiting</recruitment_status>
+    <study_type>Interventional</study_type>
+    <phase>Phase 3</phase>
+    <target_size>800</target_size>
+    <hc_freetext>Type 2 Diabetes</hc_freetext>
+    <i_freetext>Smartphone application</i_freetext>
+    <country2>Germany</country2>
+    <secondary_id>U1111-1234-5678</secondary_id>
+    <primary_outcome>HbA1c change at 12 months</primary_outcome>
+    <ethics_status>Approved</ethics_status>
+  </Trial>
+</Trials>

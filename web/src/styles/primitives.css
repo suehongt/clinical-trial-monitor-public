@@ -1,0 +1,36 @@
+.ui-icon { width: 18px; height: 18px; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.ui-button, .ui-icon-button { min-height: 36px; border: 1px solid var(--border-strong); border-radius: var(--r-control); color: var(--text); background: var(--surface); font: inherit; cursor: pointer; }
+.ui-button { display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); padding: 7px 12px; font-size: 13px; font-weight: 680; }
+.ui-button:hover:not(:disabled), .ui-icon-button:hover:not(:disabled) { border-color: var(--accent); color: var(--accent-strong); background: var(--surface-subtle); }
+.ui-button-primary { border-color: var(--accent-strong); color: #fff; background: var(--accent-strong); }
+.ui-button-primary:hover:not(:disabled) { color: #fff; background: var(--accent); }
+[data-theme="dark"] .ui-button-primary,
+[data-theme="dark"] .ui-button-primary:hover:not(:disabled) { color: #0b1120; }
+.ui-button-quiet, .ui-button-icon { border-color: transparent; background: transparent; }
+.ui-button-danger { border-color: var(--critical); color: var(--critical); background: transparent; }
+.ui-button:disabled, .ui-icon-button:disabled { opacity: .48; cursor: not-allowed; }
+.ui-button-spinner { width: 14px; height: 14px; border: 2px solid currentColor; border-right-color: transparent; border-radius: 50%; animation: ui-spin .8s linear infinite; }
+.ui-icon-button { position: relative; width: 36px; padding: 0; display: inline-grid; place-items: center; }
+.ui-icon-badge { position: absolute; top: -5px; right: -5px; min-width: 18px; height: 18px; padding: 0 4px; display: grid; place-items: center; border: 2px solid var(--surface); border-radius: 9px; color: #fff; background: var(--critical); font-size: 10px; font-weight: 800; }
+.ui-field { display: grid; gap: var(--space-1); min-width: 0; }
+.ui-field-label { color: var(--text-2); font-size: 12px; font-weight: 650; }
+.ui-input-wrap { min-height: 36px; display: flex; align-items: center; gap: var(--space-2); padding: 0 10px; border: 1px solid var(--border-strong); border-radius: var(--r-control); background: var(--surface); color: var(--muted); }
+.ui-input-wrap:focus-within { border-color: var(--accent); box-shadow: 0 0 0 3px color-mix(in srgb, var(--focus) 18%, transparent); }
+.ui-input-wrap input { min-width: 0; width: 100%; border: 0; outline: 0; color: var(--text); background: transparent; font: inherit; }
+.ui-input-error { border-color: var(--critical); }.ui-field-error { color: var(--critical); font-size: 12px; }
+.ui-segmented { flex: none; display: inline-flex; gap: 2px; padding: 3px; border-radius: var(--r-control); background: var(--surface-strong); }
+.ui-segmented button { min-height: 30px; padding: 4px 9px; border: 1px solid transparent; border-radius: 6px; color: var(--muted); background: transparent; font: inherit; font-size: 12px; font-weight: 700; cursor: pointer; }
+.ui-segmented button.is-selected { border-color: var(--border); color: var(--accent-strong); background: var(--surface); }
+.ui-panel { border: 1px solid var(--border); border-radius: var(--r-panel); background: var(--surface); }
+.ui-panel-header, .ui-panel-footer { padding: var(--space-3) var(--space-4); }.ui-panel-header { border-bottom: 1px solid var(--border); }.ui-panel-footer { border-top: 1px solid var(--border); }.ui-panel-body { padding: var(--space-4); }
+.ui-status, .ui-registry, .ui-freshness { display: inline-flex; align-items: center; gap: 6px; min-height: 22px; padding: 2px 7px; border: 1px solid var(--border); border-radius: 6px; color: var(--text-2); background: var(--surface); font-size: 11px; font-weight: 720; }
+.ui-status > span, .ui-freshness > span { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.ui-status-positive, .ui-freshness-fresh { color: var(--positive); background: var(--positive-soft); }.ui-status-warning, .ui-freshness-delayed { color: var(--warning); background: var(--warning-soft); }.ui-status-critical, .ui-freshness-stale { color: var(--critical); background: var(--critical-soft); }.ui-status-normal { color: var(--normal); background: var(--normal-soft); }.ui-status-unknown, .ui-freshness-unknown { color: var(--muted); background: var(--unknown-soft); }
+.ui-freshness small { margin-left: 2px; font-weight: 500; }
+.ui-drawer-backdrop { position: fixed; inset: 0; z-index: 100; background: var(--overlay); }
+.ui-drawer { position: absolute; top: 0; right: 0; bottom: 0; width: min(440px, 100vw); overflow-y: auto; border-left: 1px solid var(--border); background: var(--surface); box-shadow: var(--shadow-overlay); animation: ui-drawer-in 160ms ease-out; }
+.ui-skeleton { display: grid; gap: 10px; }.ui-skeleton > span { height: 54px; border-radius: var(--r-control); background: linear-gradient(90deg, var(--surface-strong), var(--surface-subtle), var(--surface-strong)); background-size: 220% 100%; animation: ui-shimmer 1.3s linear infinite; }
+.ui-alert { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--space-3); padding: 11px 13px; border: 1px solid var(--border); border-radius: var(--r-control); background: var(--surface-subtle); }.ui-alert-info { border-color: color-mix(in srgb, var(--accent) 30%, var(--border)); }.ui-alert-warning { border-color: color-mix(in srgb, var(--warning) 36%, var(--border)); background: var(--warning-soft); }.ui-alert-error { border-color: color-mix(in srgb, var(--critical) 36%, var(--border)); background: var(--critical-soft); }.ui-alert-success { border-color: color-mix(in srgb, var(--positive) 36%, var(--border)); background: var(--positive-soft); }
+@keyframes ui-spin { to { transform: rotate(360deg); } } @keyframes ui-drawer-in { from { transform: translateX(100%); } } @keyframes ui-shimmer { to { background-position: -220% 0; } }
+@media (max-width: 767px) { .ui-icon-button { min-width: 44px; width: 44px; height: 44px; }.ui-drawer-bottom { top: auto; left: 0; width: 100%; height: min(84vh, 720px); border: 1px solid var(--border); border-width: 1px 0 0; border-radius: 14px 14px 0 0; animation-name: ui-sheet-in; }.ui-field select { width: 100%; } }
+@keyframes ui-sheet-in { from { transform: translateY(100%); } }

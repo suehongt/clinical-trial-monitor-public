@@ -1,0 +1,26 @@
+{
+  "name": "ct-monitor-web",
+  "private": true,
+  "version": "1.10.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "pretest": "esbuild src/phase4State.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/phase4State.test.mjs && node node_modules/.cache/phase4State.test.mjs",
+    "test": "esbuild src/api.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/api.test.mjs && node node_modules/.cache/api.test.mjs && esbuild src/guards.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/guards.test.mjs && node node_modules/.cache/guards.test.mjs && esbuild src/i18n.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/i18n.test.mjs && node node_modules/.cache/i18n.test.mjs && esbuild src/labels.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/labels.test.mjs && node node_modules/.cache/labels.test.mjs && esbuild src/fieldLabels.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/fieldLabels.test.mjs && node node_modules/.cache/fieldLabels.test.mjs && esbuild src/searchState.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/searchState.test.mjs && node node_modules/.cache/searchState.test.mjs && esbuild src/trialViewState.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/trialViewState.test.mjs && node node_modules/.cache/trialViewState.test.mjs && esbuild src/shellState.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/shellState.test.mjs && node node_modules/.cache/shellState.test.mjs && esbuild src/urlSafety.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/urlSafety.test.mjs && node node_modules/.cache/urlSafety.test.mjs && esbuild src/router.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/router.test.mjs && node node_modules/.cache/router.test.mjs && esbuild src/helpContent.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/helpContent.test.mjs && node node_modules/.cache/helpContent.test.mjs && esbuild src/monitorTime.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/monitorTime.test.mjs && node node_modules/.cache/monitorTime.test.mjs && esbuild src/sites.test.ts --bundle --platform=node --format=esm --outfile=node_modules/.cache/sites.test.mjs && node node_modules/.cache/sites.test.mjs"
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.0",
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^6.1.1",
+    "esbuild": "^0.28.2",
+    "typescript": "^5.6.3",
+    "vite": "^8.3.0"
+  }
+}
